@@ -2,8 +2,17 @@ var mysql = require('mysql');
 var express = require('express');
 var app = express();
 var path =require("path");
+if(!process.ENV.DB_USER){
 const dbcredentials=require("./dbcredentials.js");
-
+}
+else{
+const dbcredentials={
+		  host: process.ENV.DB_HOST,
+		  user: process.ENV.DB_USER,
+		  password: process.ENV.DB_PASSWORD,
+		  database: process.ENV.DB_DATABASE
+		}
+}
 //app.use(express.logger());
 var con; 
 app.use((req,res,next)=>{
@@ -16,7 +25,7 @@ app.use((req,res,next)=>{
       //throw err;                                  // server variable configures this)
     }
   });
-	console.log("connect meddleware");
+	console.log("connect middleware");
 
 	next();
 });
