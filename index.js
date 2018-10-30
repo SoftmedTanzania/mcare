@@ -1,7 +1,8 @@
 var mysql = require('mysql');
 var express = require('express');
 var app = express();
-const dbcredentials=require("./dbcredentials.js");
+var path =require("path");
+const dbcredentials=require(path.join(__dirname,"dbcredentials.js"));
 
 //app.use(express.logger());
 var con; 
