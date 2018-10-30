@@ -2,11 +2,12 @@ var mysql = require('mysql');
 var express = require('express');
 var app = express();
 var path =require("path");
+var dbcredentials;
 if(process.env.DB_USER==null){
-const dbcredentials=require("./dbcredentials.js");
+ dbcredentials=require("./dbcredentials.js");
 }
 else{
-const dbcredentials={
+ dbcredentials={
 		  host: process.env.DB_HOST,
 		  user: process.env.DB_USER,
 		  password: process.env.DB_PASS,
