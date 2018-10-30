@@ -2,15 +2,15 @@ var mysql = require('mysql');
 var express = require('express');
 var app = express();
 var path =require("path");
-if(!process.ENV.DB_USER){
+if(process.env.DB_USER==null){
 const dbcredentials=require("./dbcredentials.js");
 }
 else{
 const dbcredentials={
-		  host: process.ENV.DB_HOST,
-		  user: process.ENV.DB_USER,
-		  password: process.ENV.DB_PASSWORD,
-		  database: process.ENV.DB_DATABASE
+		  host: process.env.DB_HOST,
+		  user: process.env.DB_USER,
+		  password: process.env.DB_PASSWORD,
+		  database: process.env.DB_DATABASE
 		}
 }
 //app.use(express.logger());
