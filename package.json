@@ -7,11 +7,11 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js"
+    "start": "node index.js --fe_ip --be_ip",
+    "test": "node tests/test.js"
   },
   "dependencies": {
-    "cool-ascii-faces": "^1.3.4",
+    
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "mysql": "^2.16.0"
@@ -22,11 +22,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/SoftmedTanzania/mcare.git"
   },
   "keywords": [
     "node",
-    "heroku",
+    "mcare",
     "express"
   ],
   "license": "MIT"
