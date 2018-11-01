@@ -12,6 +12,7 @@ else{
 		  user: process.env.DB_USER,
 		  password: process.env.DB_PASS,
 		  database: process.env.DB_DATABASE
+	 insecureAuth : true
 		}
 }
 //app.use(express.logger());
