@@ -17,7 +17,7 @@ else{
 //app.use(express.logger());
 var con; 
 app.use((req,res,next)=>{
-  dbcredentials.insecureAuth = true;
+  
  con = mysql.createConnection(dbcredentials);
 	con.on('error',(err) =>{
     console.log('db error', err);
