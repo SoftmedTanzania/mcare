@@ -3,6 +3,8 @@ var express = require('express');
 var app = express();
 var path =require("path");
 var dbcredentials;
+var PatientController = require('./controllers/patient_management/PatientController.js');
+
 if(process.env.DB_USER==null){
  dbcredentials=require("./dbcredentials.js");
 }
@@ -37,13 +39,8 @@ app.use((req,res,next)=>{
 
 
 app.get('/',function(request,response){
-
-con.query("SELECT * FROM department_types", function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-	response.send(JSON.stringify(result));
-  });
-
+	var myPatientControllerObject=new PatientController();
+myPatientControllerObject.insertPatient();
 
 });
 
