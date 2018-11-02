@@ -3,10 +3,13 @@ var express = require('express');
 var app = express();
 var path =require("path");
 var con; 
-con=require('./common/dbConnect.js'); 
-var PatientController = require('./controllers/patient_management/PatientController.js');
+con=require('/common/dbConnect.js'); 
+var PatientController = require('/mcare/controllers/patient_management/PatientController.js');
 var myPatientControllerObject;
-
+module.exports = class PatientRoutes{
+	constructor(){
+    
+ }
 
 app.use((req,res,next)=>{
 
@@ -19,7 +22,8 @@ app.use((req,res,next)=>{
 
 
 
-app.get('/',function(request,response){
+app.get('/insert_patient',function(request,response){
+
 myPatientControllerObject=new PatientController();
 	myPatientControllerObject.insertPatient();
 });
@@ -35,3 +39,4 @@ var port = process.env.PORT || 5000;
 app.listen(port,function(){
 console.log("Listening on "+port);
 });
+}
