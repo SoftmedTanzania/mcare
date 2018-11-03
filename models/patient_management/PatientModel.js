@@ -1,11 +1,11 @@
 
-var mysql = require('mysql');
-var express = require('express');
-var app = express();
-var path =require("path");
+const mysql = require('mysql');
+const express = require('express');
+const app = express();
+const path =require("path");
 //var con=require('../../common/dbConnect.js');
 const ModelMaster=require('../ModelMaster.js');
-
+const TableName="patients";
 var surname_;
 var middleName_;
 var lastName_;
@@ -40,13 +40,24 @@ module.exports = class PatientModel{
 
 
 
-insert(){
+    insert(){
  	 const  myModelMaster=new ModelMaster();
 	 var post  = {FacilityId: facilityId_,Surname: surname_,MiddleName: middleName_,LastName: lastName_,PatientPhoneNumber: patientPhoneNumber_,PatientEmail: patientEmail_,PatientPhysicalAddress: patientPhysicalAddress_,PatientDateOfBirth: patientDOB_,PatientReferenceNo: patientReferenceNo_,ParentId: parentId_,Deceased: deceased_,PatientPicUrl: patientPicUrl_,ActualImage: actualImage_};
-	 var patientTable="patients";
-    myModelMaster.insert(patientTable,post);
+    myModelMaster.insert(TableName,post);
  
- }
+    }
+
+    getAllPatients(){
+        const  myModelMaster=new ModelMaster();
+        myModelMaster.selectAll(TableName);
+
+    }
+
+    getSpecificPatients(ColumnName,value_){
+        const  myModelMaster=new ModelMaster();
+        myModelMaster.selectSpecific(TableName,ColumnName,value_);
+
+    }
 
 
 }

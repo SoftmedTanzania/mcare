@@ -19,6 +19,8 @@ else{
     }
 }
 //app.use(express.logger());
+app.use(express.static('public'));
+
 var con;
 app.use((req,res,next)=>{
     con = mysql.createConnection(dbcredentials);
@@ -35,6 +37,20 @@ app.use((req,res,next)=>{
     next();
 });
 
+app.get('/my_form.html', function (req, res) {
+    res.sendFile( __dirname + "/" + "my_form.html" );
+})
+
+app.get('/process_get', function (req, res) {
+   // Prepare output in JSON format
+   response = {
+      first_name:req.query.first_name,
+      last_name:req.query.last_name
+   };
+   console.log(response);
+   res.end(JSON.stringify(response));
+})
+
 
 
 app.get('/',function(request,response){
@@ -45,6 +61,20 @@ app.get('/',function(request,response){
 app.get('/patient_registration',function(request,response){
     var myPatientControllerObject=new PatientController();
     myPatientControllerObject.insertPatient();
+
+});
+
+app.get('/get_all_patients',function(request,response){
+    var myPatientControllerObject=new PatientController();
+    myPatientControllerObject.getAllPatients();
+
+});
+
+app.get('/get_specific_patients/?PatientId=',function(request,response){
+    var mKey="PatientId";
+    var mValue = request.params.username;
+    var myPatientControllerObject=new PatientController();
+    myPatientControllerObject.getSpecificPatients(mKey,mValue);
 
 });
 
