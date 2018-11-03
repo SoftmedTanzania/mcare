@@ -1,9 +1,10 @@
-var mysql = require('mysql');
-var express = require('express');
-var app = express();
-var path =require("path");
+const mysql = require('mysql');
+const express = require('express');
+const app = express();
+const path =require("path");
 var dbcredentials;
-var PatientController = require('./controllers/patient_management/PatientController.js');
+const PatientController = require('./controllers/patient_management/PatientController.js');
+const PatientTypesController = require('./controllers/patient_management/PatientTypesController.js');
 
 if(process.env.DB_USER==null){
     dbcredentials=require("./dbcredentials.js");
@@ -44,6 +45,12 @@ app.get('/',function(request,response){
 app.get('/patient_registration',function(request,response){
     var myPatientControllerObject=new PatientController();
     myPatientControllerObject.insertPatient();
+
+});
+
+app.get('/patient_types_configuration',function(request,response){
+    var myPatientTypesControllerObject=new PatientTypesController();
+    myPatientTypesControllerObject.insertPatientTypes();
 
 });
 

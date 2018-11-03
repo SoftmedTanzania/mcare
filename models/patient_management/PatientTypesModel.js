@@ -13,14 +13,14 @@ module.exports = class PatientTypeModel{
 
 
     constructor(patientTypeDescription,patientTypeCode){
-        patientTypeDescription_ = surname;
-        patientTypeCode_ = middleName;
+        patientTypeDescription_ = patientTypeDescription;
+        patientTypeCode_ = patientTypeCode;
 
     }
 
 
 
-    insert(){
+    insertPatientTypes(){
         const  myModelMaster=new ModelMaster();
         var post  = {PatientTypeDescription: patientTypeDescription_,PatientTypeCode: patientTypeCode_};
         var TableName="patient_types";
