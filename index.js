@@ -5,6 +5,7 @@ const path =require("path");
 var dbcredentials;
 const PatientController = require('./controllers/patient_management/PatientController.js');
 const PatientTypesController = require('./controllers/patient_management/PatientTypesController.js');
+//const PatientRoutes = require('./routes/patient_management/PatientRoutes.js');
 
 if(process.env.DB_USER==null){
     dbcredentials=require("./dbcredentials.js");
@@ -53,8 +54,15 @@ app.get('/process_get', function (req, res) {
 
 
 
-app.get('/',function(request,response){
-    response.send("Hello!Welcome to mcare");
+app.get('/',function(request,res){
+	var first_name="Silas";
+	var second_name="Onyango";
+    response = {
+      first_name:first_name,
+      last_name:second_name
+   };
+   console.log(response);
+   res.end(JSON.stringify(response));
 
 });
 
@@ -78,11 +86,7 @@ app.get('/get_specific_patients/?PatientId=',function(request,response){
 
 });
 
-app.get('/patient_types_configuration',function(request,response){
-    var myPatientTypesControllerObject=new PatientTypesController();
-    myPatientTypesControllerObject.insertPatientTypes();
 
-});
 
 
 app.use(function (err, req, res, next) {
