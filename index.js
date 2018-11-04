@@ -55,14 +55,8 @@ app.get('/process_get', function (req, res) {
 
 
 app.get('/',function(request,res){
-	var first_name="Silas";
-	var second_name="Onyango";
-    response = {
-      first_name:first_name,
-      last_name:second_name
-   };
-   console.log(response);
-   res.end(JSON.stringify(response));
+	
+   res.end("Hello!Welcome");
 
 });
 
@@ -78,9 +72,9 @@ app.get('/get_all_patients',function(request,response){
 
 });
 
-app.get('/get_specific_patients/?PatientId=',function(request,response){
-    var mKey="PatientId";
-    var mValue = request.params.username;
+app.get('/get_specific_patients',function(request,response){
+   var mKey=req.query.column_name;
+      var mValue=req.query.search_value--;
     var myPatientControllerObject=new PatientController();
     myPatientControllerObject.getSpecificPatients(mKey,mValue);
 
