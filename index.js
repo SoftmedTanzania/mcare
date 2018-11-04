@@ -74,7 +74,7 @@ app.get('/get_all_patients',function(request,response){
 
 app.get('/get_specific_patients',function(request,response){
    var mKey=req.query.column_name;
-      var mValue=req.query.search_value--;
+      var mValue=req.query.search_value;
     var myPatientControllerObject=new PatientController();
     myPatientControllerObject.getSpecificPatients(mKey,mValue);
 
