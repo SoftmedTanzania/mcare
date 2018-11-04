@@ -47,9 +47,14 @@ module.exports = class PatientModel{
  
     }
 
-    getAllPatients(){
+    getAllPatients(callback){
         const  myModelMaster=new ModelMaster();
-        myModelMaster.selectAll(TableName);
+        myModelMaster.selectAll(TableName,function(request,res){
+
+			var ret=res;
+			
+			callback(null, ret);
+        });
 
     }
 
@@ -58,6 +63,8 @@ module.exports = class PatientModel{
         myModelMaster.selectSpecific(TableName,ColumnName,value_);
 
     }
+	
+	
 
 
 }

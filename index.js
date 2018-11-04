@@ -67,7 +67,12 @@ app.get('/patient_registration',function(request,response){
 
 app.get('/get_all_patients',function(request,response){
     var myPatientControllerObject=new PatientController();
-    myPatientControllerObject.getAllPatients();
+    myPatientControllerObject.getAllPatients(function(request,res){
+
+			var ret=res;
+			
+			response.send(ret);
+        });
 
 });
 

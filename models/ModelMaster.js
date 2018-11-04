@@ -19,12 +19,14 @@ module.exports = class PatientModel {
 
     }
 
-    selectAll(tableName) {
+    selectAll(tableName,callback) {
 
 
         con.query('SELECT * FROM ' + tableName + ';', function (err, result, fields) {
             if (err) throw err;
-            console.log(result);
+            //console.log(result);
+			var ret=result;
+			callback(null, ret);
         });
 
     }
@@ -45,6 +47,7 @@ module.exports = class PatientModel {
 
 
     }
-
+	
+	
 
 }

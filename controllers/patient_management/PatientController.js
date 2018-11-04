@@ -21,9 +21,14 @@ module.exports = class PatientController{
 myPatientObject.insert();
 	}
 
-    getAllPatients(){
+    getAllPatients(callback){
         const  myPatientObject=new PatientModel();
-        myPatientObject.getAllPatients();
+        myPatientObject.getAllPatients(function(request,res){
+
+			var ret=res;
+			
+			callback(null, ret);
+        });
     }
 
     getSpecificPatients(ColumnName,value_){
