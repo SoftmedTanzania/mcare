@@ -56,12 +56,7 @@ app.get('/process_get', function (req, res) {
 
 app.get('/',function(request,res){
 	
-   con.query('SELECT * FROM patients;', function (err, result, fields) {
-            if (err) throw err;
-            console.log(result);
-	   res.send(result);
-	   });
-
+   res.send("Hello!Welcome to mcare");
 });
 
 app.get('/patient_registration',function(request,response){

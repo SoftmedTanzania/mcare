@@ -32,8 +32,8 @@ module.exports = class PatientModel {
     selectSpecific(tableName,ColumnName,value_) {
 //var sql = 'SELECT * FROM patients WHERE PatientId =18;';
 
-        //var sql = 'SELECT * FROM '+tableName+' WHERE '+ColumnName+' = '+ mysql.escape(value_);
-        con.query('SELECT * FROM patients WHERE PatientId =18;', function (err, result) {
+        var sql = 'SELECT * FROM '+tableName+' WHERE '+ColumnName+' = '+ mysql.escape(value_);
+        con.query(sql, function (err, result) {
             if (err) throw err;
             console.log(result);
             console.log(tableName);
