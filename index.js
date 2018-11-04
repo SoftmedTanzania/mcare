@@ -56,7 +56,11 @@ app.get('/process_get', function (req, res) {
 
 app.get('/',function(request,res){
 	
-   res.end("Hello!Welcome");
+   con.query('SELECT * FROM patients;', function (err, result, fields) {
+            if (err) throw err;
+            console.log(result);
+	   res.send(result);
+	   });
 
 });
 
