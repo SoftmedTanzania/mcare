@@ -87,6 +87,37 @@ module.exports = class PatientModel{
 
     }
 	
+	individual_patients_update(ColumnName,value_,callback){
+        const  myModelMaster=new ModelMaster();
+
+		var name_1="Susan";
+		var name_2="Maya";
+		
+		
+        var jsonObject_  = {Surname: name_1,MiddleName: name_2}
+        
+		myModelMaster.individual_update(TableName,jsonObject_,ColumnName,value_,function(request,res){
+
+            var returned_value_=res;
+
+            callback(null, returned_value_);
+        });
+
+    }
+	
+	delete_patients_record(ColumnName,value_,callback){
+        const  myModelMaster=new ModelMaster();
+
+        
+		myModelMaster.delete(TableName,ColumnName,value_,function(request,res){
+
+            var returned_value_=res;
+
+            callback(null, returned_value_);
+        });
+
+    }
+	
 	
 
 

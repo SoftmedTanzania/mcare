@@ -10,19 +10,6 @@ router.use(function timeLog(req, res, next) {
 });
  
  
-router.get('/my_form.html', function (req, res) {
-    res.sendFile( __dirname + "/" + "my_form.html" );
-})
-
-router.get('/process_get', function (req, res) {
-   // Prepare output in JSON format
-   response = {
-      first_name:req.query.first_name,
-      last_name:req.query.last_name
-   };
-   console.log(response);
-   res.end(JSON.stringify(response));
-})
 
 
 
@@ -79,6 +66,38 @@ router.get('/get_specific_patients',function(request,response){
 
         response.send(returned_value_);
     });
+
+});
+
+router.get('/update_individual_patient',function(request,response){
+	
+var column_name=request.query.column_name;
+   //var mValue=parseInt(request.query.search_value, 10);
+   var value_=request.query.search_value;
+	
+    var myPatientControllerObject=new PatientController();
+    myPatientControllerObject.individual_patients_update(column_name,value_,function(request,res){
+
+			var returned_value_=res;
+			
+			response.send(returned_value_);
+        });
+
+});
+
+router.get('/delete_individual_patient',function(request,response){
+	
+    var column_name=request.query.column_name;
+    //var mValue=parseInt(request.query.search_value, 10);
+    var value_=request.query.search_value;
+	
+    var myPatientControllerObject=new PatientController();
+    myPatientControllerObject.delete_patients_record(column_name,value_,function(request,res){
+
+			var returned_value_=res;
+			
+			response.send(returned_value_);
+        });
 
 });
  

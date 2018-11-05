@@ -51,6 +51,28 @@ myPatientObject.insert();
             callback(null, returned_value_);
         });
     }
+	
+	individual_patients_update(ColumnName,value_,callback){
+        const  myPatientObject=new PatientModel();
+        
+		myPatientObject.individual_patients_update(ColumnName,value_,function(request,res){
+
+            var returned_value_=res;
+
+            callback(null, returned_value_);
+        });
+    }
+	
+	delete_patients_record(ColumnName,value_,callback){
+        const  myPatientObject=new PatientModel();
+        
+		myPatientObject.delete_patients_record(ColumnName,value_,function(request,res){
+
+            var returned_value_=res;
+
+            callback(null, returned_value_);
+        });
+    }
 
 
 }
