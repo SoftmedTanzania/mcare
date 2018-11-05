@@ -25,15 +25,20 @@ myPatientObject.insert();
         const  myPatientObject=new PatientModel();
         myPatientObject.getAllPatients(function(request,res){
 
-			var ret=res;
+			var returned_value_=res;
 			
-			callback(null, ret);
+			callback(null, returned_value_);
         });
     }
 
-    getSpecificPatients(ColumnName,value_){
+    getSpecificPatients(ColumnName,value_,callback){
         const  myPatientObject=new PatientModel();
-        myPatientObject.getSpecificPatients(ColumnName,value_);
+        myPatientObject.getSpecificPatients(ColumnName,value_,function(request,res){
+
+            var returned_value_=res;
+
+            callback(null, returned_value_);
+        });
     }
 
 };

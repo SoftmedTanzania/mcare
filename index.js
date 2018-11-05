@@ -7,10 +7,8 @@ const PatientController = require('./controllers/patient_management/PatientContr
 const PatientTypesController = require('./controllers/patient_management/PatientTypesController.js');
 //const PatientRoutes = require('./routes/patient_management/PatientRoutes.js');
 
-if(process.env.DB_USER==null){
-    dbcredentials=require("./dbcredentials.js");
-}
-else{
+
+
     dbcredentials={
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
@@ -18,7 +16,7 @@ else{
         database: process.env.DB_DATABASE,
         insecureAuth : true
     }
-}
+
 //app.use(express.logger());
 app.use(express.static('public'));
 
@@ -69,19 +67,26 @@ app.get('/get_all_patients',function(request,response){
     var myPatientControllerObject=new PatientController();
     myPatientControllerObject.getAllPatients(function(request,res){
 
-			var ret=res;
+			var returned_value_=res;
 			
-			response.send(ret);
+			response.send(returned_value_);
         });
 
 });
 
 app.get('/get_specific_patients',function(request,response){
    var mKey=request.query.column_name;
-      
-	var mValue=parseInt(request.query.search_value, 10);
-    var myPatientControllerObject=new PatientController();
-    myPatientControllerObject.getSpecificPatients(mKey,mValue);
+   var mValue=parseInt(request.query.search_value, 10);
+
+   var myPatientControllerObject=new PatientController();
+
+
+    myPatientControllerObject.getSpecificPatients(mKey,mValue,function(request,res){
+
+        var returned_value_=res;
+
+        response.send(returned_value_);
+    });
 
 });
 

@@ -49,18 +49,26 @@ module.exports = class PatientModel{
 
     getAllPatients(callback){
         const  myModelMaster=new ModelMaster();
+
         myModelMaster.selectAll(TableName,function(request,res){
 
-			var ret=res;
+			var returned_value_=res;
 			
-			callback(null, ret);
+			callback(null, returned_value_);
         });
 
     }
 
     getSpecificPatients(ColumnName,value_){
         const  myModelMaster=new ModelMaster();
-        myModelMaster.selectSpecific(TableName,ColumnName,value_);
+
+
+        myModelMaster.selectSpecific(TableName,ColumnName,value_,function(request,res){
+
+            var returned_value_=res;
+
+            callback(null, returned_value_);
+        });
 
     }
 	

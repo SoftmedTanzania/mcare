@@ -24,24 +24,23 @@ module.exports = class PatientModel {
 
         con.query('SELECT * FROM ' + tableName + ';', function (err, result, fields) {
             if (err) throw err;
-            //console.log(result);
-			var ret=result;
-			callback(null, ret);
+
+			var returned_value_=result;
+			callback(null, returned_value_);
         });
 
     }
 
-    selectSpecific(tableName,ColumnName,value_) {
-//var sql = 'SELECT * FROM patients WHERE PatientId =18;';
+    selectSpecific(tableName,ColumnName,value_,callback) {
+
 
         var sql = 'SELECT * FROM '+tableName+' WHERE '+ColumnName+' = '+ mysql.escape(value_);
         con.query(sql, function (err, result) {
             if (err) throw err;
-            console.log(result);
-            console.log(tableName);
-            console.log(ColumnName);
-            console.log(value_);
 
+
+            var returned_value_=result;
+            callback(null, returned_value_);
 
         });
 
