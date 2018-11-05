@@ -6,7 +6,7 @@ var dbcredentials;
 const PatientController = require('./controllers/patient_management/PatientController.js');
 const PatientTypesController = require('./controllers/patient_management/PatientTypesController.js');
 //const PatientRoutes = require('./routes/patient_management/PatientRoutes.js');
-
+var port = process.env.PORT || 5000;
 
 
     dbcredentials={
@@ -25,10 +25,10 @@ app.use((req,res,next)=>{
     con = mysql.createConnection(dbcredentials);
     con.on('error',(err) =>{
         console.log('db error', err);
-        if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
-            console.log(err);                        // lost due to either server restart, or a
-        } else {                                      // connnection idle timeout (the wait_timeout
-            //throw err;                                  // server variable configures this)
+        if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
+            console.log(err);                        
+        } else {                                      
+            //throw err;                                  
         }
     });
     console.log("connect middleware");
@@ -36,61 +36,8 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.get('/my_form.html', function (req, res) {
-    res.sendFile( __dirname + "/" + "my_form.html" );
-})
 
-app.get('/process_get', function (req, res) {
-   // Prepare output in JSON format
-   response = {
-      first_name:req.query.first_name,
-      last_name:req.query.last_name
-   };
-   console.log(response);
-   res.end(JSON.stringify(response));
-})
-
-
-
-app.get('/',function(request,res){
-	
-   res.send("Hello!Welcome to mcare");
-});
-
-app.get('/patient_registration',function(request,response){
-    var myPatientControllerObject=new PatientController();
-    myPatientControllerObject.insertPatient();
-
-});
-
-app.get('/get_all_patients',function(request,response){
-    var myPatientControllerObject=new PatientController();
-    myPatientControllerObject.getAllPatients(function(request,res){
-
-			var returned_value_=res;
-			
-			response.send(returned_value_);
-        });
-
-});
-
-app.get('/get_specific_patients',function(request,response){
-   var mKey=request.query.column_name;
-   var mValue=parseInt(request.query.search_value, 10);
-
-   var myPatientControllerObject=new PatientController();
-
-
-    myPatientControllerObject.getSpecificPatients(mKey,mValue,function(request,res){
-
-        var returned_value_=res;
-
-        response.send(returned_value_);
-    });
-
-});
-
-
+app.use(require('./routes/patient_management/PatientRoutes.js'));
 
 
 app.use(function (err, req, res, next) {
