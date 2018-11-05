@@ -56,7 +56,7 @@ var	jsonObject_ = {
    };
 	
     var myPatientControllerObject=new PatientController();
-    myPatientControllerObject.batch_update(jsonObject_,function(request,res){
+    myPatientControllerObject.batch_patients_update(jsonObject_,function(request,res){
 
 			var returned_value_=res;
 			

@@ -41,10 +41,10 @@ myPatientObject.insert();
         });
     }
 	
-	batch_update(jsonObject_,callback){
+	batch_patients_update(jsonObject_,callback){
         const  myPatientObject=new PatientModel();
         
-		myPatientObject.batch_update(jsonObject_,function(request,res){
+		myPatientObject.batch_patients_update(jsonObject_,function(request,res){
 
             var returned_value_=res;
 
