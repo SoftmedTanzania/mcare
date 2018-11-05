@@ -59,7 +59,7 @@ module.exports = class PatientModel{
 
     }
 
-    getSpecificPatients(ColumnName,value_){
+    getSpecificPatients(ColumnName,value_,callback){
         const  myModelMaster=new ModelMaster();
 
 
