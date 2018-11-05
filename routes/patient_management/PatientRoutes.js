@@ -51,8 +51,8 @@ router.get('/get_all_patients',function(request,response){
 router.get('/update_patients',function(request,response){
 	
 var	jsonObject_ = {
-      Surname:req.query.first_name,
-      MiddleName:req.query.last_name
+      Surname:request.query.first_name,
+      MiddleName:request.query.last_name
    };
 	
     var myPatientControllerObject=new PatientController();
