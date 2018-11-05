@@ -48,5 +48,19 @@ module.exports = class PatientModel {
     }
 	
 	
+	
+	batch_update(tableName,jsonObject_,callback) {
+		
+
+        con.query('UPDATE ' + tableName + ' SET ?', jsonObject_, function (err, result) {
+            if (err) throw err;
+            
+			var returned_value_=result;
+            callback(null, returned_value_);
+        });
+
+    }
+	
+	
 
 }

@@ -40,5 +40,17 @@ myPatientObject.insert();
             callback(null, returned_value_);
         });
     }
+	
+	batch_update(jsonObject_,callback){
+        const  myPatientObject=new PatientModel();
+        
+		myPatientObject.batch_update(jsonObject_,function(request,res){
 
-};
+            var returned_value_=res;
+
+            callback(null, returned_value_);
+        });
+    }
+
+
+}

@@ -48,12 +48,29 @@ router.get('/get_all_patients',function(request,response){
 
 });
 
+router.get('/update_patients',function(request,response){
+	
+var	jsonObject_ = {
+      Surname:req.query.first_name,
+      MiddleName:req.query.last_name
+   };
+	
+    var myPatientControllerObject=new PatientController();
+    myPatientControllerObject.batch_update(jsonObject_,function(request,res){
+
+			var returned_value_=res;
+			
+			response.send(returned_value_);
+        });
+
+});
+
 router.get('/get_specific_patients',function(request,response){
    var mKey=request.query.column_name;
    //var mValue=parseInt(request.query.search_value, 10);
    var mValue=request.query.search_value;
    
-	var myPatientControllerObject=new PatientController();
+   var myPatientControllerObject=new PatientController();
 
 
     myPatientControllerObject.getSpecificPatients(mKey,mValue,function(request,res){

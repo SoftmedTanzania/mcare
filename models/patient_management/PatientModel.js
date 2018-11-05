@@ -56,6 +56,8 @@ module.exports = class PatientModel{
 			
 			callback(null, returned_value_);
         });
+		
+		myModelMaster.update()
 
     }
 
@@ -64,6 +66,19 @@ module.exports = class PatientModel{
 
 
         myModelMaster.selectSpecific(TableName,ColumnName,value_,function(request,res){
+
+            var returned_value_=res;
+
+            callback(null, returned_value_);
+        });
+
+    }
+	
+	batch_patients_update(jsonObject_,callback){
+        const  myModelMaster=new ModelMaster();
+
+
+        myModelMaster.batch_update(TableName,jsonObject_,function(request,res){
 
             var returned_value_=res;
 
