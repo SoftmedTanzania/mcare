@@ -50,9 +50,10 @@ router.get('/get_all_patients',function(request,response){
 
 router.get('/get_specific_patients',function(request,response){
    var mKey=request.query.column_name;
-   var mValue=parseInt(request.query.search_value, 10);
-
-   var myPatientControllerObject=new PatientController();
+   //var mValue=parseInt(request.query.search_value, 10);
+   var mValue=request.query.search_value;
+   
+	var myPatientControllerObject=new PatientController();
 
 
     myPatientControllerObject.getSpecificPatients(mKey,mValue,function(request,res){
