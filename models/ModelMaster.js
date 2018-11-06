@@ -17,20 +17,51 @@ var con=require('../common/dbConnect.js');
 
 module.exports = class ModelMaster {
 
+
+	
+	
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+	
+The class constructor.Does not take any arguments
+
+*/
     constructor() {
     }
 
-    insert(tableName, jsonObject_) {
+	
+	
+	
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+	
+The insert function is for insertion of all tables
+regardless of their number of columns.Pass it the
+table name and a key-value pair of data to insert
+with the key being the actual column name on the
+database.
+	
+*/
+	insert(tableName, jsonObject_,callback) {
 
 
         con.query('INSERT INTO ' + tableName + ' SET ?', jsonObject_, function (err, result) {
             if (err) throw err;
-            console.log("Insert was successful");
+            var returned_value_="Record inserted succesfully.";
+            callback(null, returned_value_);
         });
 
     }
 
-    selectAll(tableName,callback) {
+	
+	
+	
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+	
+The selectAll() is to select all data on the
+table.Pass it the table name and a callback
+function to retrieve back your result
+
+*/
+	selectAll(tableName,callback) {
 
 
         con.query('SELECT * FROM ' + tableName + ';', function (err, result, fields) {
@@ -41,8 +72,20 @@ module.exports = class ModelMaster {
         });
 
     }
+	
+	
 
-    selectSpecific(tableName,ColumnName,value_,callback) {
+	
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+	
+The selectSpecific() is to select specific a
+record(s) on the table depending on the 
+arguments you pass to it.Pass it the table 
+name and a callback function to retrieve back
+your result
+
+*/
+	selectSpecific(tableName,ColumnName,value_,callback) {
 
 
         var sql = 'SELECT * FROM '+tableName+' WHERE '+ColumnName+' = '+ mysql.escape(value_);
@@ -58,6 +101,16 @@ module.exports = class ModelMaster {
 
     }
 	
+	
+	
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+	
+The batch_update() makes a similar update on all
+records of the table you pass to it.Pass it the 
+table name and the key-value pair of the updates
+to make.
+
+*/	
 	batch_update(tableName,jsonObject_,callback) {
 		
 
@@ -70,6 +123,14 @@ module.exports = class ModelMaster {
 
    }
 	
+	
+	
+	
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+	
+individual_update() updates a specific record(s).
+
+*/	
 	individual_update(tableName,jsonObject_,ColumnName,value_,callback) {
 		
 
@@ -100,7 +161,13 @@ module.exports = class ModelMaster {
 		
     }
 	
+
 	
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+	
+delete() deletes a specific record(s).
+
+*/	
 	
 	delete(tableName,ColumnName,value_,callback) {
 		
@@ -130,29 +197,32 @@ module.exports = class ModelMaster {
             
         });
 		
-	}
+   }
 	
 	
+
 	
+/*SON/2018-11-06 00:29 - DEVELOPMENT
 	
-	batch_program(){
+batch_program() is a special function that handles batch jobs.
+
+*/	
 	
-		
-  if (err) throw err;
-  con.query("SELECT * FROM users", function (err, result, fields) {
-    if (err) throw err;
-    //console.log(result);
-	  for (var i = 0; i < result.length; i++) {
+   batch_program(){
+	
+	if (err) throw err;
+       con.query("SELECT * FROM users", function (err, result, fields) {
+       if (err) throw err;
+	   for (var i = 0; i < result.length; i++) {
 		  
         con.query("SELECT * FROM users WHERE users.id = "+result[i].id, function (err, result) {
          if (err) throw err;
          console.log(result);
-       });
-        
-     }
-   });
+          });
+         }
+     });
 
-}
+   }
 	
 	
 	

@@ -1,27 +1,35 @@
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+
+This class is the patient management"s controller class.
+It receives calls from the "PatientRoutes" class and
+passes the calls down to the "PatientModel" class
+
+*/
+
+
+
 const PatientModel = require('../../models/patient_management/PatientModel.js');
-var surname="Onyango";
-var middleName="Silas";
-var lastName="Konyango";
-var patientPhoneNumber="r";
-var patientEmail="r";
-var patientPhysicalAddress="r";
-var patientDOB="2018-11-13";
-var patientReferenceNo="r";                                                                                                                                                                                                                                                                                                                                                                                                                           
-var parentId=1;
-var deceased=1;
-var patientPicUrl="r";
-var actualImage="r";
+
 
 module.exports = class PatientController{
 	constructor(){
     
  }
-	insertPatient(){
-  const  myPatientObject=new PatientModel(surname,middleName,lastName,patientPhoneNumber,patientEmail,patientPhysicalAddress,patientDOB,patientReferenceNo,parentId,deceased,patientPicUrl,actualImage);
-myPatientObject.insert();
+	
+	
+   insertPatients(jsonObject_,callback){
+     const  myPatientObject=new PatientModel();
+     myPatientObject.insertPatients(jsonObject_,function(request,res){
+
+			var returned_value_=res;
+			
+			callback(null, returned_value_);
+        });
 	}
 
-    getAllPatients(callback){
+    
+	
+	getAllPatients(callback){
         const  myPatientObject=new PatientModel();
         myPatientObject.getAllPatients(function(request,res){
 

@@ -1,3 +1,13 @@
+/*SON/2018-11-06 00:29 - DEVELOPMENT
+
+This is the system's entry point.It creates
+the database connection and port binding 
+then initializes all the route files.
+
+*/
+
+
+
 const mysql = require('mysql');
 const express = require('express');
 const app = express();
@@ -5,7 +15,6 @@ const path =require("path");
 var dbcredentials;
 const PatientController = require('./controllers/patient_management/PatientController.js');
 const PatientTypesController = require('./controllers/patient_management/PatientTypesController.js');
-//const PatientRoutes = require('./routes/patient_management/PatientRoutes.js');
 var port = process.env.PORT || 5000;
 
 
@@ -17,7 +26,7 @@ var port = process.env.PORT || 5000;
         insecureAuth : true
     }
 
-//app.use(express.logger());
+
 app.use(express.static('public'));
 
 var con;
