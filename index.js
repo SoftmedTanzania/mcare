@@ -47,6 +47,7 @@ app.use((req,res,next)=>{
 
 
 app.use(require('./routes/patient_management/PatientRoutes.js'));
+app.use(require('./routes/patient_management/PatientTypesRoutes.js'));
 
 
 app.use(function (err, req, res, next) {

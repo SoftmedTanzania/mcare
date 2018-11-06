@@ -48,7 +48,6 @@ module.exports = class PatientModel{
 			callback(null, returned_value_);
         });
 		
-		myModelMaster.update()
 
     }
 
@@ -78,14 +77,9 @@ module.exports = class PatientModel{
 
     }
 	
-	individual_patients_update(ColumnName,value_,callback){
+	individual_patients_update(ColumnName,value_,jsonObject_,callback){
         const  myModelMaster=new ModelMaster();
 
-		var name_1="Susan";
-		var name_2="Maya";
-		
-		
-        var jsonObject_  = {Surname: name_1,MiddleName: name_2}
         
 		myModelMaster.individual_update(TableName,jsonObject_,ColumnName,value_,function(request,res){
 

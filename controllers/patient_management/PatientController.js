@@ -60,10 +60,10 @@ module.exports = class PatientController{
         });
     }
 	
-	individual_patients_update(ColumnName,value_,callback){
+	individual_patients_update(ColumnName,value_,jsonObject_,callback){
         const  myPatientObject=new PatientModel();
         
-		myPatientObject.individual_patients_update(ColumnName,value_,function(request,res){
+		myPatientObject.individual_patients_update(ColumnName,value_,jsonObject_,function(request,res){
 
             var returned_value_=res;
 

@@ -10,7 +10,7 @@ passes the calls down to the "PatientController" class
 const express = require('express');
 const router = express.Router();
 const PatientController = require('../../controllers/patient_management/PatientController.js');
-const PatientTypesController = require('../../controllers/patient_management/PatientTypesController.js');
+
  
 //Middle ware that is specific to this router
 router.use(function timeLog(req, res, next) {
@@ -128,12 +128,16 @@ router.get('/get_specific_patients',function(request,response){
 
 router.get('/update_individual_patient',function(request,response){
 	
-var column_name=request.query.column_name;
-   //var mValue=parseInt(request.query.search_value, 10);
-   var value_=request.query.search_value;
+   var column_name=request.query.ColumnName;
+   var value_=request.query.ColumnValue;
+	
+   var	jsonObject_ = {
+      Surname:request.query.Surname,
+      MiddleName:request.query.MiddleName
+   };
 	
     var myPatientControllerObject=new PatientController();
-    myPatientControllerObject.individual_patients_update(column_name,value_,function(request,res){
+    myPatientControllerObject.individual_patients_update(column_name,value_,jsonObject_,function(request,res){
 
 			var returned_value_=res;
 			
