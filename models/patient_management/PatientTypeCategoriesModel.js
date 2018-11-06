@@ -1,6 +1,6 @@
 /*SON/2018-11-06 00:29 - DEVELOPMENT
 
-This class is the "patients_types" table's model
+This class is the "patients_type_categories" table's model
 class.It receives any CRUD operation 
 requests and hands the over to class 
 ModelMaster.It creates an instance of class
@@ -15,19 +15,18 @@ const express = require('express');
 const app = express();
 const path =require("path");
 const ModelMaster=require('../ModelMaster.js');
-const TableName="patient_types";
+const TableName="patient_type_categories";
 
-module.exports = class PatientTypesModel{
+module.exports = class PatientTypeCategoriesModel{
 
 
     constructor(){                                                                                                                                                                                                                                                             
      
  }
-
-
-
-
-insert_patient_types(jsonObject_,callback){
+	
+	
+	
+insert_patient_type_categories(jsonObject_,callback){
  	 const  myModelMaster=new ModelMaster();
 
     myModelMaster.insert(TableName,jsonObject_,function(request,res){
@@ -37,12 +36,11 @@ insert_patient_types(jsonObject_,callback){
 			callback(null, returned_value_);
         });
  
-    }
+    }	
 	
 	
 	
-	
-get_all_patient_types(callback){
+get_all_patient_type_categories(callback){
         const  myModelMaster=new ModelMaster();
 
         myModelMaster.selectAll(TableName,function(request,res){
@@ -54,11 +52,12 @@ get_all_patient_types(callback){
 		
 		
 
-    }
+    }	
+	
 
 	
 	
-get_specific_patient_types(ColumnName,value_,callback){
+get_specific_patient_type_categories(ColumnName,value_,callback){
         const  myModelMaster=new ModelMaster();
 
 
@@ -69,12 +68,10 @@ get_specific_patient_types(ColumnName,value_,callback){
             callback(null, returned_value_);
         });
 
-    }
+    }	
 	
 	
-	
-	
-batch_patient_types_update(jsonObject_,callback){
+batch_patient_type_categories_update(jsonObject_,callback){
         const  myModelMaster=new ModelMaster();
 
 
@@ -85,12 +82,10 @@ batch_patient_types_update(jsonObject_,callback){
             callback(null, returned_value_);
         });
 
-    }
+    }	
 	
 	
-	
-	
-individual_patient_types_update(ColumnName,value_,jsonObject_,callback){
+individual_patient_type_categories_update(ColumnName,value_,jsonObject_,callback){
         const  myModelMaster=new ModelMaster();
 
         
@@ -101,12 +96,12 @@ individual_patient_types_update(ColumnName,value_,jsonObject_,callback){
             callback(null, returned_value_);
         });
 
-    }
+    }	
 	
 	
 	
 	
-delete_patient_types_record(ColumnName,value_,callback){
+delete_patient_type_categories_record(ColumnName,value_,callback){
         const  myModelMaster=new ModelMaster();
 
         
@@ -117,6 +112,12 @@ delete_patient_types_record(ColumnName,value_,callback){
             callback(null, returned_value_);
         });
 
-    }
-
+    }	
+	
+	
+	
+	
+	
+	
+	
 }

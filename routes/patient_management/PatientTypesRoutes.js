@@ -1,9 +1,9 @@
 /*SON/2018-11-06 00:29 - DEVELOPMENT
 
-This class is the patients table's route class.
-It receives calls from the "Index.js" and
-passes the calls down to the "PatientTypesController"
-class
+This class is the patient_type table's route class.
+It is initialized at the "Index.js" and is able to recieve
+calls from the client and passes the calls down to the 
+"PatientTypesController" class
 
 */
 
