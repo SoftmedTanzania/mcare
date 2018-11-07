@@ -51,6 +51,7 @@ app.use(require('./routes/patient_management/PatientTypesRoutes.js'));
 app.use(require('./routes/patient_management/PatientTypeCategoriesRoutes.js'));
 app.use(require('./routes/patient_management/PatientIndividualQualitiesRoutes.js'));
 app.use(require('./routes/patient_management/PatientSponsorsRoutes.js'));
+app.use(require('./routes/patient_management/PatientCheckUpsRoutes.js'));
 
 
 app.use(function (err, req, res, next) {
