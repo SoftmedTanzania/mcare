@@ -1,7 +1,7 @@
 /*SON/2018-11-06 00:29 - DEVELOPMENT
 
 This class is the patient_condition's controller class.
-It receives calls from the "PatientSponsorsRoutes" class and
+It receives calls from the "PatientVisitsRoutes" class and
 passes the calls down to the "PatientConditionModel" class
 
 */
