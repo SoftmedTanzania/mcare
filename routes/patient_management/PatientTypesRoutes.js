@@ -19,23 +19,23 @@ router.use(function timeLog(req, res, next) {
 });
 
 
-router.get('/patient_types_configuration',function(request,response){
-    var	jsonObject_ = {
+   router.get('/patient_types_configuration',function(request,response){
+     var	jsonObject_ = {
         PatientTypeDescription:request.query.PatientTypeDescription,
 		PatientTypeCode:request.query.PatientTypeCode
 		
       
-   };
+        };
 	
-	var myPatientTypesControllerObject=new PatientTypesController();
-    myPatientTypesControllerObject.insert_patient_types(jsonObject_,function(request,res){
+	      var myPatientTypesControllerObject=new PatientTypesController();
+          myPatientTypesControllerObject.insert_patient_types(jsonObject_,function(request,res){
 
 			var returned_value_=res;
 			
 			response.send(returned_value_);
         });
 
-});
+    });
 
 
 

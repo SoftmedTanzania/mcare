@@ -21,7 +21,7 @@ module.exports = class PatientTypesController{
 
 	
 	
-insert_patient_types(jsonObject_,callback){
+   insert_patient_types(jsonObject_,callback){
      const  myPatientTypesObject=new PatientTypesModel();
      myPatientTypesObject.insert_patient_types(jsonObject_,function(request,res){
 
@@ -35,7 +35,7 @@ insert_patient_types(jsonObject_,callback){
 
 	
 	
-get_all_patient_types(callback){
+   get_all_patient_types(callback){
         const  myPatientTypesObject=new PatientTypesModel();
         myPatientTypesObject.get_all_patient_types(function(request,res){
 
@@ -49,7 +49,7 @@ get_all_patient_types(callback){
 	
 
 	
-get_specific_patient_types(ColumnName,value_,callback){
+   get_specific_patient_types(ColumnName,value_,callback){
         const  myPatientTypesObject=new PatientTypesModel();
         myPatientTypesObject.get_specific_patient_types(ColumnName,value_,function(request,res){
 
@@ -62,7 +62,7 @@ get_specific_patient_types(ColumnName,value_,callback){
 	
 
 	
-batch_patient_types_update(jsonObject_,callback){
+   batch_patient_types_update(jsonObject_,callback){
         const  myPatientTypesObject=new PatientTypesModel();
         
 		myPatientTypesObject.batch_patient_types_update(jsonObject_,function(request,res){
@@ -76,7 +76,7 @@ batch_patient_types_update(jsonObject_,callback){
 	
 
 	
-individual_patient_types_update(ColumnName,value_,jsonObject_,callback){
+   individual_patient_types_update(ColumnName,value_,jsonObject_,callback){
         const  myPatientTypesObject=new PatientTypesModel();
         
 		myPatientTypesObject.individual_patient_types_update(ColumnName,value_,jsonObject_,function(request,res){
@@ -90,7 +90,7 @@ individual_patient_types_update(ColumnName,value_,jsonObject_,callback){
 
 	
 	
-delete_patient_types_record(ColumnName,value_,callback){
+   delete_patient_types_record(ColumnName,value_,callback){
         const  myPatientTypesObject=new PatientTypesModel();
         
 		myPatientTypesObject.delete_patient_types_record(ColumnName,value_,function(request,res){
