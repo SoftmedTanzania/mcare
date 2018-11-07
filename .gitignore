@@ -6,7 +6,8 @@ npm-debug.log
 *.env
 *.dev
 .DS_Store
-dbcredentials.js
+.vscode
+common/dbCredentials.js
 
 # Docker
 Dockerfile

@@ -7,14 +7,16 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js --fe_ip --be_ip",
-    "test": "node tests/test.js"
+    "start": "babel-node --presets es2015 index.js",
+    "startNode": "node index.js",
+    "test": "node test.js"
   },
   "dependencies": {
-    "@mysql/xdevapi": "^8.0.13",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "babel-cli": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0"
   },
   "devDependencies": {
     "request": "^2.81.0",
