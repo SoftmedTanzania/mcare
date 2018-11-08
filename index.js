@@ -46,6 +46,9 @@ app.use((req,res,next)=>{
 });
 
 
+
+/*START SON/2018-11-08 15:50 - DEVELOPMENT - These are the patient management route files*/
+
 app.use(require('./routes/patient_management/PatientRoutes.js'));
 app.use(require('./routes/patient_management/PatientTypesRoutes.js'));
 app.use(require('./routes/patient_management/PatientTypeCategoriesRoutes.js'));
@@ -60,6 +63,15 @@ app.use(require('./routes/patient_management/PatientGeneralRecordsRoutes.js'));
 app.use(require('./routes/patient_management/PatientVisitsRoutes.js'));
 app.use(require('./routes/patient_management/PatientRevisitsRoutes.js'));
 app.use(require('./routes/patient_management/EncountersRoutes.js'));
+
+/*END SON/2018-11-08 15:50 - DEVELOPMENT - These are the patient management route files*/
+
+
+
+/*START SON/2018-11-08 16:20 - DEVELOPMENT - These are the procedures route files*/
+
+app.use(require('./routes/procedures/ProcedureTypesRoutes.js'));
+
 
 
 

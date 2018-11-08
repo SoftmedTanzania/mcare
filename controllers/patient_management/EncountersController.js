@@ -96,24 +96,7 @@ module.exports = class EncountersController{
             callback(null, returned_value_);
         });
     }		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	
 	
