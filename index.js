@@ -71,6 +71,7 @@ app.use(require('./routes/patient_management/EncountersRoutes.js'));
 /*START SON/2018-11-08 16:20 - DEVELOPMENT - These are the procedures route files*/
 
 app.use(require('./routes/procedures/ProcedureTypesRoutes.js'));
+app.use(require('./routes/procedures/ProcedureTypeCategoriesRoutes.js'));
 
 
 
