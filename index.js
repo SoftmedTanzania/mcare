@@ -58,6 +58,8 @@ app.use(require('./routes/patient_management/PatientGeneralRecordTypesRoutes.js'
 app.use(require('./routes/patient_management/PatientGeneralRecordTypeCategoriesRoutes.js'));
 app.use(require('./routes/patient_management/PatientGeneralRecordsRoutes.js'));
 app.use(require('./routes/patient_management/PatientVisitsRoutes.js'));
+app.use(require('./routes/patient_management/PatientRevisitsRoutes.js'));
+
 
 
 app.use(function (err, req, res, next) {
