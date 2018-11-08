@@ -73,6 +73,7 @@ app.use(require('./routes/patient_management/EncountersRoutes.js'));
 app.use(require('./routes/procedures/ProcedureTypesRoutes.js'));
 app.use(require('./routes/procedures/ProcedureTypeCategoriesRoutes.js'));
 app.use(require('./routes/procedures/ProceduresRoutes.js'));
+app.use(require('./routes/procedures/PerformedProceduresRoutes.js'));
 
 
 
