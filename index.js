@@ -59,6 +59,7 @@ app.use(require('./routes/patient_management/PatientGeneralRecordTypeCategoriesR
 app.use(require('./routes/patient_management/PatientGeneralRecordsRoutes.js'));
 app.use(require('./routes/patient_management/PatientVisitsRoutes.js'));
 app.use(require('./routes/patient_management/PatientRevisitsRoutes.js'));
+app.use(require('./routes/patient_management/EncountersRoutes.js'));
 
 
 
