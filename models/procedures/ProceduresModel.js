@@ -1,8 +1,8 @@
 /*SON/2018-11-06 00:29 - DEVELOPMENT
 
-This class is the "procedure_types" table's model
+This class is the "procedures" table's model
 class.It receives any CRUD operation 
-requests and hands the over to class 
+requests and hands them over to class 
 ModelMaster.It creates an instance of class
 ModelMaster then passes parameters to its
 functions.
@@ -10,26 +10,27 @@ functions.
 */
 
 
+
 const mysql = require('mysql');
 const express = require('express');
 const app = express();
 const path =require("path");
 const ModelMaster=require('../ModelMaster.js');
-const TableName="procedure_types";
+const TableName="procedures";
 
 
 
-module.exports = class ProcedureTypesModel{
+module.exports = class ProceduresModel{
 
 
     constructor(){                                                                                                                                                                                                                                                             
      
  }
 	
+	
+	
 
-	
-	
-   insert_procedure_types(jsonObject_,callback){
+   insert_procedures(jsonObject_,callback){
  	 const  myModelMaster=new ModelMaster();
 
     myModelMaster.insert(TableName,jsonObject_,function(request,res){
@@ -44,8 +45,7 @@ module.exports = class ProcedureTypesModel{
 	
 	
 	
-	
-   get_all_procedure_types(callback){
+   get_all_procedures(callback){
         const  myModelMaster=new ModelMaster();
 
         myModelMaster.selectAll(TableName,function(request,res){
@@ -61,9 +61,7 @@ module.exports = class ProcedureTypesModel{
 	
 	
 	
-	
-	
-   get_specific_procedure_types(ColumnName,value_,callback){
+   get_specific_procedures(ColumnName,value_,callback){
         const  myModelMaster=new ModelMaster();
 
 
@@ -80,7 +78,8 @@ module.exports = class ProcedureTypesModel{
 	
 	
 	
-   batch_procedure_types_update(jsonObject_,callback){
+	
+   batch_procedures_update(jsonObject_,callback){
         const  myModelMaster=new ModelMaster();
 
 
@@ -92,11 +91,11 @@ module.exports = class ProcedureTypesModel{
         });
 
     }		
+		
 	
 	
 	
-	
-   individual_procedure_types_update(ColumnName,value_,jsonObject_,callback){
+   individual_procedures_update(ColumnName,value_,jsonObject_,callback){
         const  myModelMaster=new ModelMaster();
 
         
@@ -113,7 +112,9 @@ module.exports = class ProcedureTypesModel{
 	
 	
 	
-   delete_procedure_types_record(ColumnName,value_,callback){
+	
+	
+   delete_procedures_record(ColumnName,value_,callback){
         const  myModelMaster=new ModelMaster();
 
         
@@ -125,6 +126,11 @@ module.exports = class ProcedureTypesModel{
         });
 
     }		
+		
+	
+	
+	
+	
 	
 	
 	
