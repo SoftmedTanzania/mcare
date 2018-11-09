@@ -76,6 +76,9 @@ app.use(require('./routes/procedures/ProceduresRoutes.js'));
 app.use(require('./routes/procedures/PerformedProceduresRoutes.js'));
 app.use(require('./routes/procedures/PerformedProcedureRecordTypesRoutes.js'));
 app.use(require('./routes/procedures/PerformedProcedureRecordTypeCategoryRoutes.js'));
+app.use(require('./routes/procedures/PerformedProcedureRecordsRoutes.js'));
+
+/*END SON/2018-11-09 15:18 - DEVELOPMENT - These are the procedures route files*/
 
 
 
