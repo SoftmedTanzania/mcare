@@ -75,6 +75,7 @@ app.use(require('./routes/procedures/ProcedureTypeCategoriesRoutes.js'));
 app.use(require('./routes/procedures/ProceduresRoutes.js'));
 app.use(require('./routes/procedures/PerformedProceduresRoutes.js'));
 app.use(require('./routes/procedures/PerformedProcedureRecordTypesRoutes.js'));
+app.use(require('./routes/procedures/PerformedProcedureRecordTypeCategoryRoutes.js'));
 
 
 
