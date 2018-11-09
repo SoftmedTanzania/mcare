@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 var dbcredentials;
 
- dbcredentials={
+        dbcredentials={
 		  host: process.env.DB_HOST,
 		  user: process.env.DB_USER,
 		  password: process.env.DB_PASS,
@@ -13,10 +13,14 @@ var dbcredentials;
 var con = mysql.createConnection(dbcredentials);
 	con.on('error',(err) =>{
     console.log('db error', err);
-    if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
-      console.log(err);                        // lost due to either server restart, or a
-    } else {                                      // connnection idle timeout (the wait_timeout
-      //throw err;                                  // server variable configures this)
+    if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
+      console.log(err);                        
+    } else {                                      
+      //throw err;                                 
     }
   });
+
+
+
+
 module.exports=con;
