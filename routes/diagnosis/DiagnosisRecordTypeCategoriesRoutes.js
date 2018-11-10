@@ -30,7 +30,7 @@ router.use(function timeLog(req, res, next) {
         var	jsonObject_ = {
          
 		 DiagnosisRecordTypeId:request.query.DiagnosisRecordTypeId,
-		 DiagnosisRecordTypeDescription:request.query.DiagnosisRecordTypeDescription,
+		 DiagnosisRecordTypeCategoryDescription:request.query.DiagnosisRecordTypeCategoryDescription,
 		 DiagnosisRecordTypeCategoryCode:request.query.DiagnosisRecordTypeCategoryCode
 		
       
@@ -73,7 +73,7 @@ router.use(function timeLog(req, res, next) {
     var	jsonObject_ = {
          
 		 DiagnosisRecordTypeId:request.query.DiagnosisRecordTypeId,
-		 DiagnosisRecordTypeDescription:request.query.DiagnosisRecordTypeDescription,
+		 DiagnosisRecordTypeCategoryDescription:request.query.DiagnosisRecordTypeCategoryDescription,
 		 DiagnosisRecordTypeCategoryCode:request.query.DiagnosisRecordTypeCategoryCode
 		
       
@@ -123,7 +123,7 @@ router.use(function timeLog(req, res, next) {
           var	jsonObject_ = {
          
 		         DiagnosisRecordTypeId:request.query.DiagnosisRecordTypeId,
-		         DiagnosisRecordTypeDescription:request.query.DiagnosisRecordTypeDescription,
+		         DiagnosisRecordTypeCategoryDescription:request.query.DiagnosisRecordTypeCategoryDescription,
 		         DiagnosisRecordTypeCategoryCode:request.query.DiagnosisRecordTypeCategoryCode
 		
       
