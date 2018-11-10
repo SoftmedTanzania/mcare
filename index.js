@@ -93,6 +93,12 @@ app.use(require('./routes/diagnosis/DiagnosisRecordsRoutes.js'));
 
 
 
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the diagnosis route files*/
+
+app.use(require('./routes/drugs_and_medication/GenericDrugCategoriesRoutes.js'));
+
+
+
 
 app.use(function (err, req, res, next) {
     console.error(err.stack)
