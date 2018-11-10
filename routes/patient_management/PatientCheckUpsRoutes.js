@@ -15,7 +15,7 @@ const PatientCheckUpsController = require('../../controllers/patient_management/
 
    //Middle ware that is specific to this router
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+  
   next();
 });
 
@@ -23,11 +23,15 @@ router.use(function timeLog(req, res, next) {
 
 
    router.get('/add_patient_checkup',function(request,response){
+	   
+	   var date = new Date();
+	   date.setHours(date.getHours()+0);
+	   
      var	jsonObject_ = {
          PatientId:request.query.PatientId,
 		 UserId:request.query.UserId,
 		 PatientRevisitId:request.query.PatientRevisitId,
-		 PatientCheckUpDate:new Date().toISOString().slice(0, 19).replace('T', ' ')
+		 PatientCheckUpDate:date
 		
       
         };

@@ -17,7 +17,7 @@ const PatientCustodianController = require('../../controllers/patient_management
 
    //Middle ware that is specific to this router
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+  
   next();
 });
 

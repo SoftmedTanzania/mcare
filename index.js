@@ -40,7 +40,7 @@ app.use((req,res,next)=>{
             //throw err;                                  
         }
     });
-    console.log("connect middleware");
+    console.log("Connection established");
 
     next();
 });
@@ -79,6 +79,12 @@ app.use(require('./routes/procedures/PerformedProcedureRecordTypeCategoryRoutes.
 app.use(require('./routes/procedures/PerformedProcedureRecordsRoutes.js'));
 
 /*END SON/2018-11-09 15:18 - DEVELOPMENT - These are the procedures route files*/
+
+
+
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the diagnosis route files*/
+
+app.use(require('./routes/diagnosis/DiagnosisRoutes.js'));
 
 
 

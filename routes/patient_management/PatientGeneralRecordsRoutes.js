@@ -15,7 +15,7 @@ const PatientGeneralRecordsController = require('../../controllers/patient_manag
 
    //Middle ware that is specific to this router
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+  
   next();
 });
 
@@ -23,11 +23,15 @@ router.use(function timeLog(req, res, next) {
 
 
    router.get('/add_patient_general_records',function(request,response){
+	   
+	   var date = new Date();
+	   date.setHours(date.getHours()+0);
+	   
      var	jsonObject_ = {
          PatientId:request.query.PatientId,
 		 PatientGeneralRecordTypeCategoryId:request.query.PatientGeneralRecordTypeCategoryId,
 		 RecordValue:request.query.RecordValue,
-		 RecordedDate:new Date().toISOString().slice(0, 19).replace('T', ' ')
+		 RecordedDate:date
 		
       
         };
@@ -64,12 +68,15 @@ router.use(function timeLog(req, res, next) {
 
 
    router.get('/update_patient_general_records',function(request,response){
+	   
+	    var date = new Date();
+	   date.setHours(date.getHours()+0);
 	
     var	jsonObject_ = {
          PatientId:request.query.PatientId,
 		 PatientGeneralRecordTypeCategoryId:request.query.PatientGeneralRecordTypeCategoryId,
 		 RecordValue:request.query.RecordValue,
-		 RecordedDate:new Date().toISOString().slice(0, 19).replace('T', ' ')
+		 RecordedDate:date
 		
       
         };
@@ -115,12 +122,15 @@ router.use(function timeLog(req, res, next) {
 	
           var column_name=request.query.ColumnName;
           var value_=request.query.ColumnValue;
+	   
+	   var date = new Date();
+	   date.setHours(date.getHours()+0);
 	
           var	jsonObject_ = {
                 PatientId:request.query.PatientId,
 		        PatientGeneralRecordTypeCategoryId:request.query.PatientGeneralRecordTypeCategoryId,
 		        RecordValue:request.query.RecordValue,
-		        RecordedDate:new Date().toISOString().slice(0, 19).replace('T', ' ')
+		        RecordedDate:date
 		
       
         };

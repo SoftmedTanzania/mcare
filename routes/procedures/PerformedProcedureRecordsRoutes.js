@@ -15,18 +15,22 @@ const PerformedProcedureRecordsController = require('../../controllers/procedure
 
    //Middle ware that is specific to this router
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+  
   next();
 });
 
 
    router.get('/add_performed_procedure_records',function(request,response){
+	   
+	   var date = new Date();
+	   date.setHours(date.getHours()+0);
+	   
         var	jsonObject_ = {
          
 		     PerformedProcedureId:request.query.PerformedProcedureId,
 			 PerformedProcedureRecordTypeCategoryId:request.query.PerformedProcedureRecordTypeCategoryId,
 			 PerformedProcedureRecordValue:request.query.PerformedProcedureRecordValue,
-		     DateRecorded:new Date().toISOString().slice(0, 19).replace('T', ' ')
+		     DateRecorded:date
 		
       
               };
@@ -60,13 +64,16 @@ router.use(function timeLog(req, res, next) {
 
 
    router.get('/update_performed_procedure_records',function(request,response){
+	   
+	   var date = new Date();
+	   date.setHours(date.getHours()+0);
 	
     var	jsonObject_ = {
          
 		     PerformedProcedureId:request.query.PerformedProcedureId,
 			 PerformedProcedureRecordTypeCategoryId:request.query.PerformedProcedureRecordTypeCategoryId,
 			 PerformedProcedureRecordValue:request.query.PerformedProcedureRecordValue,
-		     DateRecorded:new Date().toISOString().slice(0, 19).replace('T', ' ')
+		     DateRecorded:date
 		
       
               };
@@ -113,13 +120,16 @@ router.use(function timeLog(req, res, next) {
 	
           var column_name=request.query.ColumnName;
           var value_=request.query.ColumnValue;
+	   
+	   var date = new Date();
+	   date.setHours(date.getHours()+0);
 	
             var	jsonObject_ = {
          
 		     PerformedProcedureId:request.query.PerformedProcedureId,
 			 PerformedProcedureRecordTypeCategoryId:request.query.PerformedProcedureRecordTypeCategoryId,
 			 PerformedProcedureRecordValue:request.query.PerformedProcedureRecordValue,
-		     DateRecorded:new Date().toISOString().slice(0, 19).replace('T', ' ')
+		     DateRecorded:date
 		
       
               };

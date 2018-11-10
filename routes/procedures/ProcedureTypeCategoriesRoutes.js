@@ -16,7 +16,7 @@ const ProcedureTypeCategoriesController = require('../../controllers/procedures/
 
    //Middle ware that is specific to this router
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+  
   next();
 });
 
