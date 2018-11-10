@@ -85,6 +85,7 @@ app.use(require('./routes/procedures/PerformedProcedureRecordsRoutes.js'));
 /*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the diagnosis route files*/
 
 app.use(require('./routes/diagnosis/DiagnosisRoutes.js'));
+app.use(require('./routes/diagnosis/DiagnosisRecordTypesRoutes.js'));
 
 
 
