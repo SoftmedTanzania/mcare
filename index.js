@@ -93,13 +93,16 @@ app.use(require('./routes/diagnosis/DiagnosisRecordsRoutes.js'));
 
 
 
-/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the diagnosis route files*/
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the drugs and medication route files*/
 
 app.use(require('./routes/drugs_and_medication/GenericDrugCategoriesRoutes.js'));
 app.use(require('./routes/drugs_and_medication/DrugConfigurationsRoutes.js'));
 app.use(require('./routes/drugs_and_medication/MedicationRequestRoutes.js'));
 app.use(require('./routes/drugs_and_medication/MedicationRequestDetailsRoutes.js'));
 app.use(require('./routes/drugs_and_medication/MedicationAdministrationRoutes.js'));
+app.use(require('./routes/drugs_and_medication/MedicationStatementRoutes.js'));
+
+/*END SON/2018-11-11 20:39 - DEVELOPMENT - These are the drugs and medication route files*/
 
 
 
