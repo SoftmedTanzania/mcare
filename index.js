@@ -97,6 +97,7 @@ app.use(require('./routes/diagnosis/DiagnosisRecordsRoutes.js'));
 
 app.use(require('./routes/drugs_and_medication/GenericDrugCategoriesRoutes.js'));
 app.use(require('./routes/drugs_and_medication/DrugConfigurationsRoutes.js'));
+app.use(require('./routes/drugs_and_medication/MedicationRequestRoutes.js'));
 
 
 
