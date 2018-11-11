@@ -99,6 +99,7 @@ app.use(require('./routes/drugs_and_medication/GenericDrugCategoriesRoutes.js'))
 app.use(require('./routes/drugs_and_medication/DrugConfigurationsRoutes.js'));
 app.use(require('./routes/drugs_and_medication/MedicationRequestRoutes.js'));
 app.use(require('./routes/drugs_and_medication/MedicationRequestDetailsRoutes.js'));
+app.use(require('./routes/drugs_and_medication/MedicationAdministrationRoutes.js'));
 
 
 
