@@ -109,6 +109,7 @@ app.use(require('./routes/drugs_and_medication/MedicationStatementRoutes.js'));
 /*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the labs and lab operations route files*/
 
 app.use(require('./routes/laboratory/LabCategoriesRoutes.js'));
+app.use(require('./routes/laboratory/LabsRoutes.js'));
 
 
 
