@@ -110,6 +110,15 @@ app.use(require('./routes/drugs_and_medication/MedicationStatementRoutes.js'));
 
 app.use(require('./routes/laboratory/LabCategoriesRoutes.js'));
 app.use(require('./routes/laboratory/LabsRoutes.js'));
+app.use(require('./routes/laboratory/TestOrderTypesRoutes.js'));
+app.use(require('./routes/laboratory/TestOrderTypeCategoryRoutes.js'));
+app.use(require('./routes/laboratory/TestOrdersRoutes.js'));
+app.use(require('./routes/laboratory/SpecimenTypesRoutes.js'));
+app.use(require('./routes/laboratory/SpecimenRoutes.js'));
+app.use(require('./routes/laboratory/SpecimenRecordCategoriesRoutes.js'));
+app.use(require('./routes/laboratory/SpecimenRecordsRoutes.js'));
+
+/*END SON/2018-11-10 08:17 - DEVELOPMENT - These are the labs and lab operations route files*/
 
 
 
