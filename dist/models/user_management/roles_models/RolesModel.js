@@ -80,11 +80,27 @@ function (_BaseModel) {
       return this.create("role_type_categories", roleTypeCategory);
     }
   }, {
-    key: "update",
-    value: function update() {}
+    key: "addUser",
+    value: function addUser(val) {
+      //UserId	DepartmentId	Surname	MiddleName	LastName	PhoneNumber	Email	Password	ProfPicUrl	PhysicalAddress	NationalId	JobReferenceNo
+      return this.create("users", val);
+    }
   }, {
-    key: "delete",
-    value: function _delete() {}
+    key: "updateUser",
+    value: function updateUser(val, where) {
+      //UserId	DepartmentId	Surname	MiddleName	LastName	PhoneNumber	Email	Password	ProfPicUrl	PhysicalAddress	NationalId	JobReferenceNo
+      return this.update("users", val, where);
+    }
+  }, {
+    key: "updateRoleType",
+    value: function updateRoleType(val, where) {
+      return this.update("role_types", val, where);
+    }
+  }, {
+    key: "updateRoleCategory",
+    value: function updateRoleCategory(val, where) {
+      return this.update("role_type_category", val, where);
+    }
   }, {
     key: "getByID",
     value: function getByID() {}

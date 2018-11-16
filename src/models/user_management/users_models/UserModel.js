@@ -1,12 +1,11 @@
 import BaseModel from "../../BaseModel";
 
 export default class UserModel extends BaseModel{
-    read(select,where,like,first = false, offset = false, order_by = false){
-     
+    getUsers(select,where,mode="AND",like=false,first = false, offset = false, order_by = false){
+     return this.read("users",where,select,mode)
     }
 
-    update(){}
-    delete(){} 
+
     getByID(){}
     getByCategory(){}
     getByDepartment(){}

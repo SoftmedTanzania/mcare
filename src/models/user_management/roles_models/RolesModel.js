@@ -44,8 +44,22 @@ export default class Roles extends BaseModel{
     addRoleCategory(roleTypeCategory){
           return this.create("role_type_categories",roleTypeCategory)
     }
-    update(){}
-    delete(){} 
+    addUser(val){
+        //UserId	DepartmentId	Surname	MiddleName	LastName	PhoneNumber	Email	Password	ProfPicUrl	PhysicalAddress	NationalId	JobReferenceNo
+        return this.create("users",val)
+    }
+    updateUser(val,where){
+        //UserId	DepartmentId	Surname	MiddleName	LastName	PhoneNumber	Email	Password	ProfPicUrl	PhysicalAddress	NationalId	JobReferenceNo
+        return this.update("users",val,where)
+    }
+    updateRoleType(val,where){
+        return this.update("role_types",val,where)
+    }
+    updateRoleCategory(val,where){
+        return this.update("role_type_category",val,where)
+    }
+
+
     getByID(){}
     getByCategory(){}
     assignRole(){}
