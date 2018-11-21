@@ -13,8 +13,6 @@ const express = require('express');
 const app = express();
 const path =require("path");
 var dbcredentials;
-const PatientController = require('./controllers/patient_management/PatientController.js');
-const PatientTypesController = require('./controllers/patient_management/PatientTypesController.js');
 var port = process.env.PORT || 5000;
 
 
@@ -119,6 +117,60 @@ app.use(require('./routes/laboratory/SpecimenRecordCategoriesRoutes.js'));
 app.use(require('./routes/laboratory/SpecimenRecordsRoutes.js'));
 
 /*END SON/2018-11-10 08:17 - DEVELOPMENT - These are the labs and lab operations route files*/
+
+
+
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the radiology operation route files*/
+
+app.use(require('./routes/radiology/RadiologyRoutes.js'));
+app.use(require('./routes/radiology/RadiologyOrderTypesRoutes.js'));
+app.use(require('./routes/radiology/RadiologyOrdersRoutes.js'));
+app.use(require('./routes/radiology/RadiologyOrderResultCategoriesRoutes.js'));
+app.use(require('./routes/radiology/RadiologyOrderResultsRoutes.js'));
+
+/*END SON/2018-11-10 08:17 - DEVELOPMENT - These are the radiology operation route files*/
+
+
+
+
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the ward operation route files*/
+
+app.use(require('./routes/wards/WardTypesRoutes.js'));
+app.use(require('./routes/wards/WardTypeCategoryRoutes.js'));
+app.use(require('./routes/wards/WardsRoutes.js'));
+app.use(require('./routes/wards/BedTypeRoutes.js'));
+app.use(require('./routes/wards/BedGroupRoutes.js'));
+app.use(require('./routes/wards/BedsRoutes.js'));
+app.use(require('./routes/wards/BedAllocationRoutes.js'));
+app.use(require('./routes/wards/BedAllocationDaysRoutes.js'));
+
+/*END SON/2018-11-10 08:17 - DEVELOPMENT - These are the ward operation route files*/
+
+
+
+
+
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the appointments and scheduling  route files*/
+
+app.use(require('./routes/appointments_and_scheduling/AppointmentTypesRoutes.js'));
+app.use(require('./routes/appointments_and_scheduling/AppointmentsRoutes.js'));
+app.use(require('./routes/appointments_and_scheduling/AppointmentTypeCategoryRoutes.js'));
+app.use(require('./routes/appointments_and_scheduling/SlotTypesRoutes.js'));
+app.use(require('./routes/appointments_and_scheduling/SlotTypeCategoryRoutes.js'));
+app.use(require('./routes/appointments_and_scheduling/SlotsRoutes.js'));
+app.use(require('./routes/appointments_and_scheduling/SchedulesRoutes.js'));
+app.use(require('./routes/appointments_and_scheduling/ExpectedAppointmentActivitiesRoutes.js'));
+
+/*END SON/2018-11-10 08:17 - DEVELOPMENT - These are the appointments and scheduling  route files*/
+
+
+
+
+
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the finance and billing  route files*/
+
+app.use(require('./routes/finance_and_billing/SponsorTypesRoutes.js'));
+
 
 
 
