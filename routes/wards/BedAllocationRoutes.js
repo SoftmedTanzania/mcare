@@ -59,7 +59,7 @@ router.use(function timeLog(req, res, next) {
 
 
 
-   router.get('/get_all_bed_allocation(',function(request,response){
+   router.get('/get_all_bed_allocation',function(request,response){
   var myBedAllocationControllerObject=new BedAllocationController();
     myBedAllocationControllerObject.get_all_bed_allocation(function(request,res){
 

@@ -55,7 +55,7 @@ router.use(function timeLog(req, res, next) {
 
 
 
-   router.get('/get_all_bed_type(',function(request,response){
+   router.get('/get_all_bed_type',function(request,response){
    var myBedTypeControllerObject=new BedTypeController();
     myBedTypeControllerObject.get_all_bed_type(function(request,res){
 

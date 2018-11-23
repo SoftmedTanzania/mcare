@@ -56,7 +56,7 @@ router.use(function timeLog(req, res, next) {
 
 
 
-   router.get('/get_all_bed_group(',function(request,response){
+   router.get('/get_all_bed_group',function(request,response){
    var myBedGroupControllerObject=new BedGroupController();
     myBedGroupControllerObject.get_all_bed_group(function(request,res){
 

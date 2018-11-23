@@ -55,7 +55,7 @@ router.use(function timeLog(req, res, next) {
 
 
 
-   router.get('/get_all_ward_type_category(',function(request,response){
+   router.get('/get_all_ward_type_category',function(request,response){
     var myWardTypeCategoryControllerObject=new WardTypeCategoryController();
     myWardTypeCategoryControllerObject.get_all_ward_type_category(function(request,res){
 

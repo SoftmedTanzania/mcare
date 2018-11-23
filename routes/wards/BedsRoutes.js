@@ -57,7 +57,7 @@ router.use(function timeLog(req, res, next) {
 
 
 
-   router.get('/get_all_beds(',function(request,response){
+   router.get('/get_all_beds',function(request,response){
    var myBedsControllerObject=new BedsController();
     myBedsControllerObject.get_all_beds(function(request,res){
 

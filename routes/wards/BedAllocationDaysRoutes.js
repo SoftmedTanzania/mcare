@@ -55,7 +55,7 @@ router.use(function timeLog(req, res, next) {
 
 
 
-   router.get('/get_all_bed_allocation_days(',function(request,response){
+   router.get('/get_all_bed_allocation_days',function(request,response){
    var myBedAllocationDaysControllerObject=new BedAllocationDaysController();
     myBedAllocationDaysControllerObject.get_all_bed_allocation_days(function(request,res){
 

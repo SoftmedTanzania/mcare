@@ -57,7 +57,7 @@ router.use(function timeLog(req, res, next) {
 
 
 
-   router.get('/get_all_wards(',function(request,response){
+   router.get('/get_all_wards',function(request,response){
    var myWardsControllerObject=new WardsController();
     myWardsControllerObject.get_all_wards(function(request,res){
 

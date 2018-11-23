@@ -170,6 +170,30 @@ app.use(require('./routes/appointments_and_scheduling/ExpectedAppointmentActivit
 /*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the finance and billing  route files*/
 
 app.use(require('./routes/finance_and_billing/SponsorTypesRoutes.js'));
+app.use(require('./routes/finance_and_billing/SponsorsRoutes.js'));
+app.use(require('./routes/finance_and_billing/ClaimsRoutes.js'));
+
+/*END SON/2018-11-10 08:17 - DEVELOPMENT - These are the finance and billing  route files*/
+
+
+
+
+
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the department configuration  route files*/
+
+app.use(require('./routes/departments/DepartmentTypesRoutes.js'));
+app.use(require('./routes/departments/DepartmentTypeCategoriesRoutes.js'));
+app.use(require('./routes/departments/DepartmentsRoutes.js'));
+
+/*END SON/2018-11-10 08:17 - DEVELOPMENT - These are the department configuration  route files*/
+
+
+
+
+
+/*START SON/2018-11-10 08:17 - DEVELOPMENT - These are the user management  route files*/
+
+app.use(require('./routes/user_management/UsersRoutes.js'));
 
 
 
